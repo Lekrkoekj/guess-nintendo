@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>mario</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="songSelection.js"></script>
+    <script src="guess.js"></script>
+    <script src="songList.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=PT+Sans&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="">
+
+    </div>
+    <div id="right-answer">
+        <center>
+            <h1 id="answer-top-text">You did it!</h1>
+            <p id="right-answer-song"></p>
+            <p id="game-release"></p>
+            <img src="" id="right-answer-image">
+            <br>
+            <br>
+            <button id="close-answer" class="bottom-controls" onclick="HideAnswer()">Close</button>
+        </center>
+    </div>
+    <div class="topbar">
+        <center>
+            <h1 id="songName">Guess the Nintendo soundtrack</h1>
+        </center>
+    </div>
+    <div class="sitemiddle">
+        <center>
+            <div id="guesses-list">
+                <h2>Guesses</h2>
+                <p id="guess-1"></p>
+                <p id="guess-2"></p>
+                <p id="guess-3"></p>
+                <p id="guess-4"></p>
+                <p id="guess-5"></p>
+                <p id="guess-6"></p>
+            </div>
+        </center>
+    </div>
+    <div class="bottombar">
+        <center>
+            <br>
+            <audio controls>
+                <source src="" type="audio/mpeg" id="musicSource">
+            </audio>
+            <br>
+            <br>
+            <input style="height: 34px" type="text" placeholder="Search Game" id="gameSearchbox" oninput="SearchGameList(this.value)" class="bottom-controls">
+            <select id="gameDropdown" onchange="ChangeSelectedGame(this.value)" class="bottom-controls">
+                <option value="">Select Game</option>
+
+                <option value="New Super Mario Bros.">New Super Mario Bros.</option>
+                <option value="Super Mario 64">Super Mario 64</option>
+                <option value="Super Mario Bros.">Super Mario Bros.</option>
+                <option value="Super Mario Bros. 2">Super Mario Bros. 2</option>
+                <option value="Super Mario Bros. 3">Super Mario Bros. 3</option>
+                <option value="Super Mario Sunshine">Super Mario Sunshine</option>
+                <option value="Super Mario World">Super Mario World</option>
+            </select>
+            <select id="songDropdown" onchange="ChangeSelectedSong(this.value)" class="bottom-controls">
+                <option value="-1"><img src="">Select Song</option>
+            </select>
+            <button id="submitAnswerButton"onclick="CheckGuess()" class="bottom-controls">Submit</button>
+        </center>
+    </div>
+    
+    <script src="loadSong.js"></script>
+    
+</body>
+
+</html>

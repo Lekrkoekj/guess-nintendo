@@ -1,0 +1,74 @@
+body {
+    font-family: Lato;
+    background: #131719;
+    color: white;
+    margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: PT Sans;
+    margin: 0;
+    padding: 20px;
+}
+.guesses-list h2 {
+    padding-bottom: 10px
+}
+.topbar, .bottombar {
+    background: #1b2022;
+}
+.bottombar {
+    padding: 20px 0px;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+}
+div#guesses-list {
+    max-width: 500px;
+    width: 75vw;
+    padding: 5px;
+    border-radius: 5px;
+}
+div#guesses-list p {
+    text-transform: uppercase;
+    border: 3px solid #323639;
+    padding: 10px;
+    height: 21px;
+    border-radius: 5px;
+}
+div#guesses-list p[style] {
+    height: 100%;
+}
+.bottom-controls {
+    font-family: PT Sans;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    background: #1b2022;
+    border-color: #323639;
+    border-width: 2px;
+    border-radius: 5px;
+    border-style: solid;
+    height: 40px;
+    cursor: pointer;
+    padding: 0px 10px;
+}
+.bottombar audio {
+    max-width: 500px;
+    width: 90vw
+}
+input[disabled], select[disabled], button[disabled] {
+    opacity: 0.25;
+    color: #ffffffa3;
+    cursor: default;
+}
+div#right-answer {
+    position: absolute;
+    width: 100vw;
+    background: #131719;
+    height: 100%;
+    z-index: 1;
+    display:none
+}
+img#right-answer-image {
+    max-width: 300px;
+}
