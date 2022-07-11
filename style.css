@@ -1,25 +1,32 @@
 body {
     font-family: Lato;
-    background: #131719;
-    color: white;
     margin: 0;
+    color: #272728;
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: PT Sans;
     margin: 0;
     padding: 20px;
 }
+.topbar {
+    height: 82px;
+}
 .guesses-list h2 {
     padding-bottom: 10px
 }
 .topbar, .bottombar {
-    background: #1b2022;
+    background: #efefef;
 }
 .bottombar {
     padding: 20px 0px;
-    position: fixed;
     width: 100%;
     bottom: 0px;
+    overflow: auto;
+    height: 155px;
+}
+.sitemiddle {
+    height: calc(100vh - 82px - 195px);
+    overflow: auto;
 }
 div#guesses-list {
     max-width: 500px;
@@ -29,7 +36,7 @@ div#guesses-list {
 }
 div#guesses-list p {
     text-transform: uppercase;
-    border: 3px solid #323639;
+    border: 3px solid gray;
     padding: 10px;
     height: 21px;
     border-radius: 5px;
@@ -41,10 +48,8 @@ div#guesses-list p[style] {
     font-family: PT Sans;
     font-weight: bold;
     font-size: 16px;
-    text-align: center;
-    color: white;
-    background: #1b2022;
-    border-color: #323639;
+    border-color: gray;
+    background: white;
     border-width: 2px;
     border-radius: 5px;
     border-style: solid;
@@ -54,7 +59,9 @@ div#guesses-list p[style] {
 }
 .bottombar audio {
     max-width: 500px;
-    width: 90vw
+    width: 90vw;
+    border-radius: 100px;
+    border: 2px solid gray;
 }
 input[disabled], select[disabled], button[disabled] {
     opacity: 0.25;
@@ -64,11 +71,52 @@ input[disabled], select[disabled], button[disabled] {
 div#right-answer {
     position: absolute;
     width: 100vw;
-    background: #131719;
+    background: #efefef;
     height: 100%;
     z-index: 1;
     display:none
 }
 img#right-answer-image {
     max-width: 300px;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #131719;
+        color: white;
+    }
+    .topbar, .bottombar {
+        background: #1b2022;
+    }
+    .bottombar audio {
+        border: 3px solid #323639;
+    }
+    div#right-answer {
+        background: #131719;
+    }
+    .bottom-controls {
+        color: white;
+        background: #1b2022;
+        border-color: #323639;
+    }
+    div#guesses-list p {
+        border: 2px solid #323639;
+    }
+}
+@media only screen and (max-width: 466px) {
+    .topbar {
+        height: 124px;
+    }
+    .sitemiddle {
+        height: calc(100vh - 124px - 195px);
+    }
+}
+@media only screen and (max-width: 307px) {
+    .topbar {
+        height: 166px;
+    }
+    .sitemiddle {
+        height: calc(100vh - 166px - 195px);
+    }
 }
